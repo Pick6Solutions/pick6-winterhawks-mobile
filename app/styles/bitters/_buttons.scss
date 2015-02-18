@@ -1,0 +1,26 @@
+button,
+input[type="submit"] {
+  @extend %button;
+  @include appearance(none);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  outline: none;
+  text-transform: uppercase;
+}
+
+%button--main {
+  font-size: 30px;
+  width: 100%;
+}
+
+.button--alt {
+	@extend button;
+	background-color: $alt-button-color !important;
+
+	&:hover {
+		background-color: $hover-alt-button-color !important;
+	}
+}

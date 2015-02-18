@@ -1,0 +1,82 @@
+// Typography
+$sans-serif: "franklin-gothic", sans-serif;
+$serif: $georgia;
+$base-font-family: $sans-serif;
+$base-font-weight: 900;
+$base-font-style: italic;
+$header-font-family: $base-font-family;
+
+// Logo
+$winterhawks-logo: url(' images/winterhawks_logo.png ');
+
+// Background
+$winterhawks-background: url(' images/winterhawks_background.png ');
+$dots-background: url(' images/worn_dots.png ');
+$redeem-button: url(' images/redeem_button.png ');
+
+// Font Sizes
+$base-font-size: 1em;
+$big-button-size: $base-font-size * 3.25;
+$huge-number-size: $base-font-size * 2.25;
+$big-number-size: $base-font-size * 4;
+$h1-font-size: $base-font-size * 2;
+$h2-font-size: $base-font-size * 1.75;
+$h3-font-size: $base-font-size * 1.5;
+$h4-font-size: $base-font-size * 1.25;
+$h5-font-size: $base-font-size * 1;
+$h6-font-size: $base-font-size * 0.75;
+
+// Line height
+$base-line-height: 1;
+$header-line-height: 1;
+
+// Other Sizes
+$base-border-radius: 0px;
+$base-spacing: $base-line-height * 1em;
+$base-z-index: 0;
+
+// Colors
+$winterhawk-red: #cc0000;
+$winterhawk-yellow: rgb(249, 179, 17);
+$winterhawk-orange: rgb(249, 102, 17);
+$winterhawk-green: rgb(81, 161, 39);
+$dark-gray: rgb(102, 102, 102);
+$white: #fff;
+$black: #000;
+$light-gray: #cac6c5;
+
+// Background Color
+$base-background-color: $dark-gray;
+
+// Font Colors
+$base-font-color: $black;
+$base-font-alt-color: $white;
+$base-accent-color: $winterhawk-red;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+$alt-button-color: $light-gray;
+$hover-alt-button-color: darken($light-gray, 15);
+
+// Flash Colors
+$alert-color: $winterhawk-yellow;
+$error-color: $base-accent-color;
+$notice-color: $winterhawk-orange;
+$success-color: $winterhawk-green;
+
+// Border color
+$base-border-color: $dark-gray;
+$base-border: 1px solid $base-border-color;
+
+// Forms
+$form-border-color: $base-border-color;
+$form-border-color-hover: darken($base-border-color, 10);
+$form-border-color-focus: $base-accent-color;
+$form-border-radius: $base-border-radius;
+$form-box-shadow: inset 0 1px 3px rgba(black,0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-font-size: $base-font-size;
+$form-font-family: $base-font-family;
