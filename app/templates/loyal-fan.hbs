@@ -1,0 +1,72 @@
+<div class="nav-container nav-container__sticky">
+  <div class="top-bar"></div>
+  <div class="nav">
+    {{#link-to 'landing' class='nav__back'}}
+    {{/link-to}}
+    <div class="nav__logo">
+      <img class="header-logo-image" src="assets/images/winterhawks_logo.png">
+    </div>
+    <div class="nav__user-points">
+      <div class="nav__user-points--top">
+        Reward Pts
+      </div>
+      <div class="nav__user-points--bottom">
+        {{session.currentUser.total_points}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loyal-fan__container push-down">
+  <div class="section-headline">
+    <h3>Today's Game</h3>
+  </div>
+
+  {{#unless model}}
+    <div class="game-time"></div>
+    <div class="loyal-fan__block--game-checkin">
+      <button disabled>No Game</button>
+    </div>
+  {{else}}
+    <div class="game-time"> {{!-- BEGIN GAME TIME BLOCK--}}
+      {{!-- LEFT --}}
+      <div class="game-time__left">
+        <div class="loyal-fan__block--game-vs__left">
+          <h1>VS</h1>
+        </div>
+        <div class="loyal-fan__block--game-vs__right">
+          <img class="logo-image--vs" {{bind-attr src=model.opponent_logo_url}}>
+        </div>
+      </div>
+      {{!-- RIGHT --}}
+      <div class="game-time__right">
+        <h1>
+            {{model.time}}
+        </h1>
+      </div>
+    </div> {{!-- END GAME TIME BLOCK --}}
+    <div class="loyal-fan__block--game-checkin">
+      {{!-- Checkin function needs to be modified in order to take advantage of states --}}
+      {{#if session.currentUser.checked_in}}
+        <button disabled>Welcome!</button>
+      {{else}}
+        {{async-button action="checkIn" default="Check In" pending="Checking In..." fulfilled="Checked In!" rejected="Ooops!"}}
+      {{/if}}
+    </div>
+  {{/unless}}
+
+  <div class="loyal-fan__block--fan-level__bg">
+     <div class="loyal-fan__block--fan-level">
+       <h1>Fan Level</h1>
+       <div class="loyal-fan__block--fan-level__chart">
+    {{ember-knob readOnly="true" displayInput="false" fgColor="#cc0000" bgColor="white" value=session.currentUser.percentage_to_next_level class='knob'}}
+       </div>
+       <div class="loyal-fan__block--fan-level__label">
+         <h2>{{session.currentUser.fan_level}}</h2>
+       </div>
+     </div>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,867 @@
+// Here are all of the heights for the stat containers & inner head, and body
+$block-height-alpha: em(150); // My Line
+	$header-height-alpha: em(40);
+	$body-height-alpha: em(110);
+$block-height-beta: $block-height-alpha; // My Points Tonight
+	$header-height-beta: em(60);
+	$body-height-beta: em(90);
+$block-height-gamma: em(80); // GAP
+// Using this to calculate height of stadium rank div
+$block-height-delta: ($block-height-gamma * 3) + ($base-spacing * 4); // Stadium Ranking
+	$header-height-delta: $header-height-beta;
+	$body-height-delta: $block-height-delta - $header-height-delta;
+$block-height-epsilon: $block-height-alpha * 1.2;
+	$body-height-epsilon: $block-height-epsilon * .7;
+	$header-height-epsilon: $block-height-epsilon * .3;
+
+h1 {
+    text-shadow: 2px 2px $dark-gray;
+}
+
+.landing {
+	&__container {
+		@extend .container-alpha;
+	}
+
+	&__block {
+		@include span-columns(2);
+		@include omega(2n);
+		text-align: center;
+		// height: em(200);
+		margin-bottom: $base-spacing;
+
+		img {
+			display: block;
+			max-width: 100%;
+
+	    	&:hover {
+	    		cursor: pointer;
+	    	}
+		}
+	}
+
+}
+
+.tweet-btn {
+	button {
+		@extend %button--main;
+	}
+}
+
+.tweet {
+	&__block {
+		@include span-columns(4);
+	}
+
+	&__form {
+		background: $winterhawk-red;
+		textarea {
+			width: 92%;
+			margin: em(10);
+			clear: both;
+		}
+
+		p {
+			text-align: right;
+			margin-right: em(10);
+			color: white;
+		}
+	}
+
+	// &__hashtag {
+	// 	@include span-columns(2);
+	// 	@include shift(1);
+	// 	text-align: center;
+	// 	clear: both;
+	// 	border: 1px solid $winterhawk-red;
+	// 	margin: $base-spacing 0;
+
+	// 	h3 {
+			
+
+	// 	}
+
+	// 	&--left {
+
+	// 	}
+	// 	text-align: center;
+	// }
+
+	&__buttons {
+		@include span-columns(4);
+		position: fixed;
+		bottom: 0;
+		
+		button {
+			width: 100% !important;
+			height: 75px;
+		}
+	}
+}
+
+.hashtags {
+	@include span-columns(4);
+	text-align: center;
+	height: auto;
+	margin-bottom: $base-spacing * 2;
+
+	&__item {
+		h3 {
+			@include span-columns(2.75);
+			@include shift(.25);
+			// border: 1px solid $winterhawk-red;
+			padding: $block-height-gamma*.1 0;
+			margin-bottom: $base-spacing;
+		}
+
+		span {
+			@include span-columns(.75);
+			height: 100%;
+
+			img {
+				display: block;
+				padding-top: 5px;
+				margin: auto;
+				width: 50%;
+				height: auto;
+			}
+		}
+	}
+}
+
+.instructions {
+	@include span-columns(4);
+
+	button {
+		@extend %button--main;
+	}
+}
+
+.player-selection {
+	&__container {
+		@extend .container-alpha;
+	}
+
+	&__block {
+		@include span-columns(2);
+		@include omega(2n);
+		text-align: center;
+		height: $block-height-alpha;
+		margin-bottom: $base-spacing;
+
+		&--top {
+			width: 100%;
+			height: 70%;
+
+			img {
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+		&--bottom {
+			background: white;
+			width: 100%;
+			height: 30%;
+		}
+	}
+
+	&__stats-box {
+		@include span-columns(1 of 3);
+		height: 100%;
+
+		h6 {
+			font-size: $base-font-size * .5;
+			color: black;
+		}
+
+		h1 {
+			color: black;
+		}
+	}
+}
+
+
+.user-stats {
+	&__container {
+		@extend .container-alpha;
+	}
+
+	// Heights and margins for each user stat block
+
+	&__block {
+		@include span-columns(2);
+		text-align: center;
+		@include omega(2n);
+
+		&--title {
+			h3 {
+				color: white;
+				margin-bottom: $base-spacing;
+			}
+		}
+
+
+		&__block-image {
+			height: $body-height-epsilon;
+			width: auto;
+		}
+
+		&__block-image--my-line {
+			height: 160;
+			width: 110;
+		}
+
+		&--GAP-horizontal {
+			height: $block-height-epsilon;
+			margin-bottom: $base-spacing;
+		}
+
+		&--my-line, 
+		&--my-points {
+			height: $block-height-epsilon;
+		}
+ 
+		&--stadium-rank {
+			height: $block-height-delta;
+		}
+
+		&--my-points,
+		&--stadium-rank {
+			// @include omega();
+			background: white;
+			margin-bottom: $base-spacing * 2;
+		}
+
+		&--GAP__goals,
+		&--GAP__assists,
+		&--GAP__plays {
+			height: $block-height-gamma * 1.15;
+			margin-bottom: $base-spacing * 2;
+			
+
+			&__left,
+			&__right {
+				position: relative;
+				height: 100%;
+			}
+
+			&__bottom {
+				@include span-columns(1 of 3);
+				height: 100%;
+				text-align: center;
+
+				h1, h6 {
+					color: $black;
+				}
+			}
+
+			&__left {
+				@include span-columns(1.5, block-collapse);
+				background: $winterhawk-red;
+				position: relative;
+
+				h1 {
+					font-size: $big-number-size;
+				}
+
+				h3 {
+					@include vertical-align();
+					color: $winterhawk-red;
+					-webkit-text-stroke: 1px $white;
+					padding-bottom: 15px;
+					padding-right: 10px;
+					font-size: 3em;
+				}
+
+				h6 {
+					position: absolute;
+					bottom: 5;
+					width: 100%;
+				}
+
+				small {
+					text-align: center;
+					color: white;
+					font-size: 60%;
+					line-height: 40px;
+				}
+			}
+
+			&__right {
+				@include span-columns(2.5);
+				background: $white;
+
+				h2{
+					@include vertical-align();
+					font-size: $huge-number-size;
+				}
+			}
+		}
+	}
+
+	// Block headers
+
+	&__block-header {
+		background: $winterhawk-red;
+
+		h3 {
+			@include vertical-align();
+		}
+
+		&--my-line {
+			height: $header-height-epsilon;
+		}
+
+		&--my-points,
+		&--stadium-rank {
+			height: $header-height-beta;
+		}
+
+		&--GAP-bottom {
+			background: white;
+			height: $header-height-epsilon;
+
+			h3 {
+				color: black;
+			}
+		}
+	}
+
+	// Block bodies
+
+	&__block-body {
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		h2 {
+			@include vertical-align();
+			font-size: $huge-number-size;
+		}
+
+		&--GAP-horizontal {
+			height: $body-height-epsilon;
+			background-color: transparentize($winterhawk-red, 0.4);
+			position: relative;
+
+			span {
+				position: absolute;
+				top: 10;
+				left: 0;
+				background-color: green;
+				padding: em(2);
+				background-color: transparentize($white, 0.3);
+			}
+		}
+
+		&--my-line {
+			height: $body-height-epsilon;
+			border-bottom: 20px solid $winterhawk-red;
+		}
+
+		&--my-points {
+			height: $body-height-beta;
+		}
+
+		&--stadium-rank {
+			height: $body-height-delta;
+		}
+	}
+}
+
+.user-trophies {
+	&__container {
+		@extend .container-alpha;
+	}
+
+	&__block {
+		@include span-columns(1 of 3);
+		text-align: center;
+		@include omega(3n);
+		margin-bottom: $base-spacing * 2;
+
+		&--bottom {
+
+			h6 {
+				background-color: transparentize($winterhawk-red, 0.4);
+				margin-bottom: $base-spacing;
+			}
+		}
+	}
+
+	&__item {
+		position: relative;
+		height: $block-height-alpha / 1.5;
+
+		img {
+			height: $block-height-alpha / 1.5;
+			width: 100%;
+		}
+
+		h6 {
+			bottom: 0;
+			width: 100%;
+		}
+	}
+}
+
+.user-rewards {
+	&__container {
+		@extend .container-alpha;
+	}
+
+	&__block {
+		@include span-columns(1 of 3);
+		text-align: center;
+		@include omega(3n);
+		margin-right: em(10) !important;
+		background-color: transparentize($winterhawk-red, 0.4);
+		margin-bottom: $base-spacing;
+		height: $block-height-alpha / 1.5;
+
+		&--top {
+			height: 75%;
+			background-color: $light-gray;
+			img {
+				box-sizing: border-box;
+				display: block;
+				margin: auto;
+				height: 100%;
+				padding: em(10);
+			}
+		}
+
+		&--bottom {
+			height: 25%;
+
+			h6 {
+				@include vertical-align();
+			}
+		} 
+	}
+
+	&__item {
+		position: relative;
+		height: $block-height-alpha / 1.5;
+
+		img {
+			height: $block-height-alpha / 1.5;
+			width: 100%;
+		}
+
+		h6 {
+			bottom: 0;
+			width: 100%;
+		}
+	}
+
+	&-redeem {
+
+		&__block {
+			@include span-columns(4, block-collapse);
+			width: 100%;
+			height: $block-height-alpha * 1.3;
+			background: white;
+			margin-bottom: $base-spacing;
+
+			&--left {
+				background: transparentize($light-gray, .4);
+				@include span-columns(1.5);
+				height: ($block-height-alpha * 1.3) * .75;
+				img {
+					display: block;
+					margin: auto;
+					width: 75%;
+					height: auto;
+					@include vertical-align();
+				}
+			}
+
+			&--right {
+				height: ($block-height-alpha * 1.3) * .75;
+				@include span-columns(2.25);
+				margin-right: 0 !important;
+			}
+
+			&--bottom {
+				@include span-columns(4);
+				height: ($block-height-alpha * 1.3) * .25;
+				background: $winterhawk-red;
+				color: white;
+
+				&__left {
+					@include span-columns(1.75);
+
+					h1 {
+						font-size: $huge-number-size;
+						display: inline;
+						margin: 0 em(2);
+					}
+				}
+
+				&__right {
+					@include span-columns(2.25);
+
+					h2 {
+						color: white;
+						display: inline;
+						text-align: right;
+						margin-left: em(2);
+					}
+				}
+			}
+		}
+
+		&__instructs {
+			@include span-columns(3.5);
+			@include shift(.5);
+			@include omega();
+			text-align: right;
+			color: white;
+
+			button {
+				font-size: $big-button-size;
+				width: 100%;
+				height: 100%;
+			}
+
+			h5 {
+				margin-right: em(5);
+			}
+		}
+
+		&__button {
+			@include span-columns(4);
+			position: absolute;
+			bottom: 0;
+			margin: 0 auto;
+			
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+
+.loyal-fan {
+	&__container {
+		@include outer-container;
+
+		button {
+			margin-bottom: $base-spacing;
+		}
+	}
+
+	&__block {
+
+		&--game-vs,
+		&--game-time,
+		 {
+			height: $block-height-gamma;
+		}
+
+		&game-checkin {
+			height: $block-height-gamma * 1.5;
+		}
+
+		&--game-checkin,
+		&--fan-level,
+		&--redeem
+		 {
+			@include span-columns(4);
+			@include omega;
+		}
+
+		&--game-vs {
+			@include span-columns(2.5,block-collapse);
+			position: relative;
+			background-image: $vs-background;
+			background-size: cover;
+			background-color: transparentize($winterhawk-red, .3);
+  			background-blend-mode: multiply;
+
+			&__left {
+				@include span-columns(2);
+				@include vertical-align();
+				text-align: right;
+				h1 {
+					font-size: $huge-number-size;
+				}
+			}
+
+			&__right {
+				@include span-columns(2);
+				@include vertical-align();
+				text-align: left;
+			}
+		}
+
+		&--game-time {
+			@include span-columns(1.5);
+			@include omega;
+			background: $light-gray;
+			text-align: center;
+
+			h1 {
+				@include vertical-align();
+				color: $black;
+			}
+		}
+
+		&--game-checkin {
+
+			button {
+				@extend %button--main;
+			}
+
+			img {
+				width: 100%;
+				height: $block-height-gamma * 1.5;
+			}
+		}
+
+		&--fan-level {
+			text-align: center;
+			background-image: url(../assets/images/fan_level_bg.png);
+			background-size: 300px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			// background: transparentize($light-gray, .5);
+			height: $block-height-alpha * 2.5;
+
+			&__bg {
+				@include span-columns(4);
+				background: transparentize($light-gray, .5);
+				// height: $block-height-alpha * 4.5;
+			}
+
+			h1 {
+				font-size: $base-font-size * 2.5;
+				margin-top: $base-spacing / 4.5;
+				margin-bottom: $base-spacing / 2;
+			}
+
+			&__chart {
+				@include span-columns(3);
+				@include shift(.5);
+				height: $block-height-alpha * 1.5;
+				margin-bottom: $base-spacing * 1.5; 
+				position: relative;
+
+
+				canvas {
+					padding-top: em(10);
+					height: $block-height-alpha * 1.5;
+					width: auto;
+					opacity: .8;
+				}
+
+				// span {
+				// 	position: absolute;
+				//     left: 50%;
+				//     margin-left: (($block-height-alpha * 1.6) / -2);
+				//     top: 0;
+				// 	border: 60px solid white;
+				// 	height: $block-height-alpha * 1.6;
+				// 	border-radius: $block-height-alpha * 1.6;
+				// 	width: $block-height-alpha * 1.6;
+				// 	z-index: -1;
+				// }
+
+				// Future number display on circle
+
+				input {
+					position: absolute;
+					@include vertical-align();
+					top: 0;
+					left: 50%;
+				}
+			}
+
+			&__label {
+				@include span-columns(2);
+				@include shift(1);
+				
+				h2 {
+					background-color: $winterhawk-red;
+					color: white;
+					padding: em(5);
+				}
+				
+			}
+		}
+
+		// &--redeem {
+		// 	background: $black;
+		// 	height: $block-height-gamma *.5;
+
+		// 	&-inner {
+		// 		@include vertical-align();
+		// 	}
+
+		// 	h4 {
+		// 		margin-top: em(20);
+		// 		margin-left: em(5);
+		// 	}
+
+		// 	&__form {
+		// 		@include span-columns(2.75);
+		// 		height: 100%;
+				
+		// 		input {
+		// 			height: em(60);
+		// 			margin-left: em(5);
+		// 		}
+		// 	}
+
+		// 	&__image {
+		// 		@include span-columns(1.25);
+		// 		background-color: $winterhawk-red;
+		// 		height: 100%;
+
+		// 		img {
+		// 			height: $block-height-gamma * .5;
+		// 			display:block;
+		// 			margin:auto;
+		// 		}
+		// 	}
+		// }
+
+		&--redeem {
+			@include span-columns(4);
+			background: black;
+			height: $block-height-gamma * 1.25;
+			position: relative;
+			margin-bottom: $base-spacing;
+
+			&__left{
+				@include span-columns(2.75);
+			}
+
+			&__right {
+				@include span-columns(1.25);
+				height: $block-height-gamma * 1.25;
+
+				img {
+					width: 100%;
+					height: 100%;
+
+					&:hover {
+						opacity: .5;
+					}
+				}	
+			}
+
+			&__info {
+				position: absolute;
+				top: 0;
+				color: white !important;
+			}
+
+			&__form {
+				margin-top: $block-height-gamma * .4;
+				height: 60px;
+
+				&__input {
+					height: $block-height-gamma * .6;
+					color: black !important;
+				}
+			}
+
+		}		
+
+	}
+}
+
+.logo-image--vs {
+	display: block;
+	padding: em(3) 0;
+	height: $block-height-gamma;
+	width: auto;
+}
+
+.block {
+	&__bottom {
+		margin-top: $base-spacing;
+
+		img {
+			width: 100%;
+			height: auto;
+			margin-bottom: $base-spacing;
+		}
+
+	}
+}
+
+.bottom {
+	@include span-columns(4);
+	position: absolute;
+	bottom: 0;
+	height: auto;
+}
+
+.radio_active {
+	border: 8px solid $winterhawk-green;
+}
+
+.change_line {
+	margin-bottom: $base-spacing;
+}
+
+.game-time {
+	@include span-columns(3.5);
+	@include shift(.25);
+	height: 100px;
+	background: url(../assets/images/today_game_bg.png);
+	border-radius: 10px;
+	border: solid white 2px;
+	margin-bottom: $base-spacing;
+
+	&__split {
+		@include span-columns(.05 of 3.5, block-collapse);
+		@include vertical-align();
+		height: 75px;
+		border-right: 1px solid #cccccc;
+		display: inline-block;
+		vertical-align: bottom;
+	}
+	
+	&__left {
+		@include span-columns(1.725 of 3.5, block-collapse);
+		height: 100px;
+	}
+	&__right {
+		@include span-columns(1.725 of 3.5, block-collapse);
+		height: 100px;
+		text-align: center;
+		padding: em(5);
+
+		h1 {
+			@include vertical-align();
+			font-size: $huge-number-size;
+		}
+	}
+}
+
+.change_line {
+	button {
+		@extend %button--main;
+	}
+}
+
+.button_disabled {
+	cursor: not-allowed;
+}
+
+.block__bottom--coupon {
+	button {
+		margin-top: $base-spacing;
+		@extend %button--main;
+	}
+}

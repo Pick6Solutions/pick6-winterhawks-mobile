@@ -1,0 +1,78 @@
+<div class="nav-container nav-container__sticky">
+  <div class="top-bar"></div>
+  <div class="nav">
+    {{#link-to 'landing' class='nav__back'}}
+    {{/link-to}}
+    <div class="nav__logo">
+      <img class="header-logo-image" src="assets/images/winterhawks_logo.png">
+    </div>
+    <div class="nav__user-points">
+      <div class="nav__user-points--top">
+        Reward Pts
+      </div>
+      <div class="nav__user-points--bottom">
+        {{session.currentUser.total_points}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-headline push-down">
+  <h5>Top line hockey: click any player combination to make your selection.</h5>
+</div>
+
+<div class="player-selection__container">
+{{#each player in model.players}}
+  <div class="player-selection__block" {{bind-attr class=':clickable player.picked_by_current_user:user-player-selection'}} {{action 'selectPlayer' player}}>
+    <div class="player-selection__block--top">
+      <img {{bind-attr src=player.photo_url}}>
+    </div>
+    <div class="player-selection__block--bottom">
+      <div class="player-selection__stats-box">
+        <h6>Goals</h6>
+        <h1>{{player.number_of_goals_for_current_game}}</h1>
+      </div>
+      <div class="player-selection__stats-box">
+        <h6>Assists</h6>
+        <h1>{{player.number_of_assists_for_current_game}}</h1>
+      </div>
+      <div class="player-selection__stats-box">
+        <h6>Plays</h6>
+        <h1>{{player.number_of_good_plays_for_current_game}}</h1>
+      </div>
+    </div>
+  </div>
+{{/each}}
+</div>
+
+{{!-- <div class="user-stats__container">
+
+  {{#each player in model.players}}
+  <div class="user-stats__block user-stats__block--GAP-horizontal" {{bind-attr class=':clickable player.picked_by_current_user:user-player-selection'}} {{action 'selectPlayer' player}}>
+    <div class="user-stats__block-body user-stats__block-body--GAP-horizontal">
+      <span>{{player.last_name}}</span>
+      <img {{bind-attr src=player.photo_url}} class='user-stats__block-image'>
+    </div>
+    <div class="user-stats__block-header user-stats__block-header--GAP-bottom">
+      <div class="user-stats__block--GAP__goals__bottom">
+        <h6>Goals</h6>
+        <h1>{{player.number_of_goals_for_current_game}}</h1>
+      </div>
+      <div class="user-stats__block--GAP__assists__bottom">
+        <h6>Assists</h6>
+        <h1>{{player.number_of_assists_for_current_game}}</h1>
+      </div>
+      <div class="user-stats__block--GAP__plays__bottom">
+        <h6>Plays</h6>
+        <h1>{{player.number_of_good_plays_for_current_game}}</h1>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+
+</div> --}}
+
+
+
+
+

@@ -1,0 +1,104 @@
+<div class="nav-container nav-container__sticky">
+  <div class="top-bar"></div>
+  <div class="nav">
+    {{#link-to 'landing' class='nav__back'}}
+    {{/link-to}}
+    <div class="nav__logo">
+      <img class="header-logo-image" src="assets/images/winterhawks_logo.png">
+    </div>
+    <div class="nav__user-points">
+      <div class="nav__user-points--top">
+        Reward Pts
+      </div>
+      <div class="nav__user-points--bottom">
+        {{session.currentUser.total_points}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-headline push-down">
+  <h4>Tweet the winterhawks</h4>
+</div>
+
+{{#if session.currentUser.signed_in_to_twitter}}
+<form {{action 'sendTweet' on='submit'}}>
+
+  <div class="tweet__block">
+      <div class="tweet__form">
+        {{textarea id='tweet' class='form-control tweet-input' placeholder='Enter tweet text' value=text}}<br>
+        <p>{{charactersLeft}} CHARACTERS LEFT</p>
+      </div>
+  </div>
+
+  <div class="hashtags">
+    {{#each model itemController='twitter-snippet'}}
+      <div class="hashtags__item" {{action 'insert'}}>
+        <h3>{{displayText}}</h3>
+        {{#if alreadyInserted}}
+        <span>
+          <img src="assets/images/winterhawks_logo.png" alt="Winterhawks Logo"/>
+        </span>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="tweet__buttons">
+    <button type="submit"><h1>TWEET</h1></button>
+  </div>
+</form>
+
+{{else}}
+
+<div class="tweet-btn">
+  <button {{action 'signIn'}} class="tweet-btn">
+      Log in to Twitter
+  </button>
+</div>
+
+{{/if}}
+
+{{!-- <button {{action 'signIn'}}>Sign into Twitter</button>
+ --}}
+{{!-- {{#if session.currentUser.signed_in_to_twitter}}
+ --}}
+{{!--   <div class="row">
+
+      <div id='hashtags'>
+        {{#each model itemController='twitter-snippet'}}
+          <div class='row clickable' {{action 'insert'}}>
+            <div class="col-xs-8">
+              <div class="snippet-txt">
+                {{displayText}}
+              </div>
+            </div>
+            {{#if alreadyInserted}}
+              <div class="col-xs-4 col-sm-offset-10">
+                <center>
+                  <img class="img-responsive snippet-icon" src="assets/images/wh_logo_with_lbl.png" alt="Winterhawks Logo"/>
+                </center>
+              </div>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div> --}}
+
+{{!--       <button class='row tweet-btn' type='submit'>
+        <div class='tweet-btn-text'>
+          TWEET
+        </div>
+      </button>
+    </form>
+  </div> --}}
+
+{{!-- {{else}}
+ --}}
+{{!--   <button {{action 'signIn'}} class='row tweet-btn'>
+    <div class='tweet-btn-text'>
+      Sign into Twitter
+    </div>
+  </button> --}}
+
+{{!-- {{/if}}
+ --}}

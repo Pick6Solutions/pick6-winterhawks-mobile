@@ -30,6 +30,12 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    sassOptions: {
+      includePaths: [
+      'bower_components/neat/app/assets/stylesheets/',
+      'app/assets/bitters'     ]
+    },
+
     cordova: {
       rebuildOnChange: false,
       emulate: true,

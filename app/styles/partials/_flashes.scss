@@ -1,0 +1,33 @@
+$flash-red: $winterhawk-red;
+$flash-yellow: $winterhawk-yellow;
+$flash-green: $winterhawk-green;
+$flash-orange: $winterhawk-orange;
+
+%flash-base {
+  display: block;
+  font-weight: bold;
+  margin-bottom: $base-spacing / 2;
+  padding: $base-spacing / 2;
+}
+
+$flashes: (alert: $flash-yellow, error: $flash-red, notice: $flash-orange, success: $flash-green);
+
+@each $flash, $color in $flashes {
+  .flash-#{$flash} {
+    @extend %flash-base;
+    background: $color;
+
+    .error {
+      color: darken($color, 60) !important;
+    }
+
+    a {
+      color: darken($color, 70);
+      border-bottom: 1px solid transparentize(darken($color, 70), .7);
+
+      &:hover {
+        color: darken($color, 90);
+      }
+    }
+  }
+}

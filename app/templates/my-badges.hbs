@@ -1,0 +1,59 @@
+<div class="nav-container nav-container__sticky">
+  <div class="top-bar"></div>
+  <div class="nav">
+    {{#link-to 'landing' class='nav__back'}}
+    {{/link-to}}
+    <div class="nav__logo">
+      <img class="header-logo-image" src="assets/images/winterhawks_logo.png">
+    </div>
+    <div class="nav__user-points">
+      <div class="nav__user-points--top">
+        Reward Pts
+      </div>
+      <div class="nav__user-points--bottom">
+        {{session.currentUser.total_points}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="user-trophies__container push-down">
+  <div class="section-headline">
+    <h3>My Badges</h3>
+  </div>
+
+  <div class="loyal-fan__block--redeem">
+    <form {{action 'sendCode' on='submit'}}>
+
+      <div class="loyal-fan__block--redeem__left">
+
+        <div class="loyal-fan__block--redeem__form">
+          <label for="code"><h6>Enter Badge Code to Redeem<h6></label>
+            {{input id='code' class='loyal-fan__block--redeem__form__input' type='text' placeholder='Enter Code' action='sendCode' value=code on='enter'}}
+        </div>
+
+      </div>
+
+      <div class="loyal-fan__block--redeem__right">
+        <img src="assets/images/redeem_button.png" {{action 'sendCode'}}>
+      </div>
+
+    </form>
+
+  </div>
+
+
+  {{#each session.currentUser.badges}}
+    <div class="user-trophies__block">
+      <div class="user-trophies__item">
+        <img {{action "viewTitle"}} {{bind-attr src=image_url}} class="trophy-img" alt="Trophy">
+        {{#if controller.titleVisible}}
+          <div class="user-trophies__block--bottom">
+            <h6>{{name}}</h6>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  {{/each}}
+</div>
+

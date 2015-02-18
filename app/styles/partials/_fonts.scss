@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'entypo';
+    src: url('fonts/entypo/entypo.eot');
+    src: url(' fonts/entypo/entypo.eot?#iefix ') format('embedded-opentype'),
+         url(' fonts/entypo/entypo.woff ') format('woff'),
+         url(' fonts/entypo/entypo.ttf ') format('truetype'),
+         url(' fonts/entypo/entypo.svg#EntypoRegular ') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class*="entypo-"]:before {
+  font: 2.5em/1.9em 'entypo', sans-serif;
+}
+

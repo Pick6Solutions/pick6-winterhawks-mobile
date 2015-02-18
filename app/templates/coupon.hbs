@@ -1,0 +1,111 @@
+<div class="nav-container nav-container__sticky">
+  <div class="top-bar"></div>
+  <div class="nav">
+    {{#link-to 'landing' class='nav__back'}}
+    {{/link-to}}
+    <div class="nav__logo">
+      <img class="header-logo-image" src="assets/images/winterhawks_logo.png">
+    </div>
+    <div class="nav__user-points">
+      <div class="nav__user-points--top">
+        Reward Pts
+      </div>
+      <div class="nav__user-points--bottom">
+        {{session.currentUser.total_points}}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="error-area">
+  {{#if controller-errors}}
+    {{#each message in controller-errors.base}}
+    <span class="flash-error">{{message}}</span>
+    {{/each}}
+  {{/if}}
+</div>
+
+<div class="user-rewards__container push-down">
+  <div class="user-rewards-redeem__block">
+    <div class="user-rewards-redeem__block--left">
+      <img {{bind-attr src=image_url}}>
+    </div>
+    <div class="user-rewards-redeem__block--right">
+      <h2>{{model.name}}</h2>
+    </div>
+    <div class="user-rewards-redeem__block--bottom">
+      <div class="user-rewards-redeem__block--bottom__left">
+        <h1>{{model.points}}</h1><span>pts</span>
+      </div>
+      <div class="user-rewards-redeem__block--bottom__right">
+       Points<br>Available: <h2>{{session.currentUser.total_points}}</h2>
+      </div>
+    </div>
+    <div class='user-rewards-redeem__instructs'>
+      <h5>When redeemeed coupons are emailed to you.</h5>
+    </div>
+  </div>
+</div>
+
+<div class="block__bottom block__bottom--coupon">
+  {{async-button action="redeem" default="Redeem" pending="Redeeming..." fulfilled="Redeemed!" rejected="Oops!"}}
+{{!--   <img src="assets/images/redeem_btn_cpn.png" alt="Redeem Coupon (loading)" {{action 'redeem'}}> --}}
+</div>
+
+{{!-- <div class="row spacer"></div>
+
+<div class="row cpn-img-bg">
+  <div class='row alert-text'>
+    {{#if controller-errors}}
+      {{#each message in controller-errors.base}}
+        <div class="alert alert-danger">
+          {{message}}
+        </div>
+      {{/each}}
+    {{/if}}
+  </div>
+
+  <div class="row cpn-top-sec">
+    <div class="col-xs-4 cpn-img">
+      <img class="img-responsive" {{bind-attr src=image_url}} alt="Coupon icon">
+    </div>
+    <div class="col-xs-8 cpn_copy">
+      <div class="cpn-offer-desc">
+        {{model.name}}
+      </div>
+    </div>
+  </div>
+
+  <div class='row cpn-bot-sec'>
+    <div class='col-xs-5 cpn-pts-sec'>
+      <div class='row cpn-pts'>
+        {{model.points}} pts
+      </div>
+      <div class='row'>
+        <div class='col-xs-8 pts-available'>
+          Points<br>
+          Available:
+        </div>
+        <div class='col-xs-4 my-pts-avail'>
+          {{session.currentUser.total_points}}
+        </div>
+      </div>
+    </div>
+    <div class='col-xs-6 expiration-details'>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-xs-6'>
+  </div>
+  <div class='col-xs-6 redeem-instructs'>
+    <img class="img-responsive" src="assets/images/coupons_redeemed.png" alt="When redeemeed coupons are emailed to you.">
+  </div>
+</div>
+
+<div class="row redeem-btn">
+  <img class="img-responsive clickable" src="assets/images/redeem_btn_cpn.png" alt="Redeem Coupon (loading)" {{action 'redeem'}}>
+</div> --}}

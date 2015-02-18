@@ -1,0 +1,81 @@
+.icon {
+	font-family: 'entypo';
+	color: white;
+	font-style: normal;
+	font-weight: 300;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	&--star {
+		content:'\e606';
+	}
+
+	&--user:before {
+		content:'\e601'
+	}
+
+	&--back {
+		content:'\e610';
+	}
+
+	&--lock:before {
+		content:'\e60d';
+	}
+
+	&--trophy {
+		content:'\e60c';
+	}
+
+	&--mail:before {
+		content:'\e600';
+	}
+}
+
+
+
+
+.icon__background {
+	&--back:before {
+		@extend .icon;
+		@extend .icon--back;
+		display:block;
+		margin:auto;
+		position: absolute;
+		top: 0; left: 0; bottom: 0; right: 0;
+		z-index: 0;
+		font-size: em(100);
+	 	height: 100%;
+	 	line-height: 80px;
+	}
+
+	&--trophy:before {
+		@extend .icon;
+		@extend .icon--trophy;
+		margin: auto;
+		position: absolute;
+		top: 0; left: 0; bottom: 0; right: 0;
+		z-index: 0;
+		font-size: em(100);
+	 	z-index: 0;
+	 	height: 100%;
+	 	line-height: 70px;
+	}
+
+	&--plays-star:before {
+		@extend .icon;
+		@extend .icon--star;
+		position: absolute;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		padding-top: 3px;
+		font-size: em(60);
+	 	z-index: 0;
+	 	height: 100%;
+	 	line-height: 60px;
+	 	height: 50px;
+	 	text-shadow: 2px 2px $dark-gray;
+	}
+}

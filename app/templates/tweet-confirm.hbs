@@ -1,0 +1,32 @@
+<div class="nav-container nav-container__sticky">
+  <div class="top-bar"></div>
+  <div class="nav">
+    {{#link-to 'landing' class='nav__back'}}
+    {{/link-to}}
+    <div class="nav__logo">
+      <img class="header-logo-image" src="assets/images/winterhawks_logo.png">
+    </div>
+    <div class="nav__user-points">
+      <div class="nav__user-points--top">
+        Reward Pts
+      </div>
+      <div class="nav__user-points--bottom">
+        {{session.currentUser.total_points}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='row logo-row push-down'>
+  <img class="img-responsive wh-logo-big" src="assets/images/wh_logo_big.png">
+</div>
+
+<div class='row great-tweet-row'>
+  <img class="img-responsive great-tweet" src="assets/images/great_tweet_text.png">
+</div>
+
+{{#link-to 'twitter'}}
+  <div class='row tweet-again'>
+    <img class="img-responsive" src="assets/images/tweet_again_btn.png">
+  </div>
+{{/link-to}}

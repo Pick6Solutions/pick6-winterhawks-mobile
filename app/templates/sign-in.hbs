@@ -1,0 +1,36 @@
+<div class="sign-in__container">  
+  <div class="pick6-logo">
+  <img class="pick6-logo" src="assets/images/logo.png" alt="">
+  </div>
+
+  <div class="big-head-logo">
+    <img class="large" src="assets/images/logo_trophies_lg.png" alt="">
+  </div>
+
+  <div class="error-area">
+      {{#if loginErrorMessage}}
+        <div class='flash-error'><span class="error">{{loginErrorMessage}}</span></div>
+      {{/if}}
+    </div>
+  
+  <form {{action 'authenticate' on='submit'}}>
+    <div class="login-form">
+      <div class="login-form__input">
+        <span class="login-form__input-icon icon icon--user"></span>
+        {{input id='identification' class='' placeholder='Username' value=identification}}
+      </div>
+
+      <div class="login-form__input">
+        <span class="login-form__input-icon icon icon--lock"></span>
+        {{input id='password' class='form-control input-lg' type='password' placeholder='Password' value=password}}
+      </div>
+      <button class="sign-in__button"><h1>Sign In</h1></button>
+      {{#link-to 'sign-up' class='sign-up__button'}}<h2>Sign Up</h2>{{/link-to}}
+      <a class="forgot-pass" href="#" {{action 'resetPassword'}} alt="Reset forgotten password">
+        <h6>Forgot Password?</h6>
+      </a>
+    </div>
+  </form>
+
+</div>
+

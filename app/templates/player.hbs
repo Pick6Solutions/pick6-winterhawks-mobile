@@ -1,0 +1,103 @@
+<div class="nav-container nav-container__sticky">
+  <div class="top-bar"></div>
+  <div class="nav">
+    {{#link-to 'landing' class='nav__back'}}
+    {{/link-to}}
+    <div class="nav__logo">
+      <img class="header-logo-image" src="assets/images/winterhawks_logo.png">
+    </div>
+    <div class="nav__user-points">
+      <div class="nav__user-points--top">
+        Reward Pts
+      </div>
+      <div class="nav__user-points--bottom">
+        {{session.currentUser.total_points}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-headline push-down">
+  <h5>CHANGE YOUR LINE AT ANY TIME BY CLICKING THE “CHANGE LINE” BUTTON BELOW.</h5>
+</div>
+
+<div class="change_line">
+  <button {{action 'listPlayers' session.currentUser.current_game_id}}>Change Line </button>
+</div>
+
+<div class="user-stats__container">
+  <!-- Top -->
+  <!-- My Line -->
+
+  <div class="user-stats__block">
+    <div class="user-stats__block-header user-stats__block-header--my-line">
+      <h3>My Line</h3>
+    </div>
+    <div class="user-stats__block-body user-stats__block-body--my-line">
+      <img class="user-stats__block-image" {{bind-attr src=model.photo_url}}><!-- Dynamic -->
+    </div>
+  </div>
+
+  <!-- Points tonight -->
+
+  <div class="user-stats__block user-stats__block--my-points">
+    <div class="user-stats__block-header user-stats__block-header--my-points">
+      <h3>My Pts Tonight</h3>
+    </div>
+    <div class="user-stats__block-body user-stats__block-body--my-points">
+      <h2 class="responsive_type">{{session.currentUser.points_from_current_game}}</h2><!-- Dynamic -->
+    </div>
+  </div>
+  <!-- Bottom -->
+
+  <!-- GAP -->
+
+  <div class="user-stats__block user-stats__block--GAP">
+    <div class="user-stats__block--header">
+      <h3>Correct Picks</h3>
+    </div>
+    <div class="user-stats__block--GAP__goals">
+      <div class="user-stats__block--GAP__goals__left">
+        <h1>G</h1>
+        <h6>Goals</h6>
+        <small>5 pts</small>
+      </div>
+      <div class="user-stats__block--GAP__goals__right">
+        <h2>{{session.currentUser.my_goals_from_current_game}}</h2>
+      </div>
+    </div>
+    <div class="user-stats__block--GAP__assists">
+      <div class="user-stats__block--GAP__assists__left">
+        <h1>A</h1>
+        <h6>Assists</h6>
+        <small>3 pts</small>
+      </div>
+      <div class="user-stats__block--GAP__assists__right">
+        <h2>{{session.currentUser.my_assists_from_current_game}}</h2>
+      </div>
+    </div>
+    <div class="user-stats__block--GAP__plays">
+      <div class="user-stats__block--GAP__plays__left">
+        <div class="icon__background--plays-star"></div>
+        <h3>3</h3> <!-- Dynamic -->
+        <h6>Plays</h6>
+        <small>1 pts</small>
+      </div>
+      <div class="user-stats__block--GAP__plays__right">
+        <h2>{{session.currentUser.my_plays_from_current_game}}</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stadium Rank -->
+
+  <div class="user-stats__block user-stats__block--stadium-rank">
+    <div class="user-stats__block-header user-stats__block-header--stadium-rank">
+      <h3>Stadium Rank</h3>
+    </div>
+    <div class="user-stats__block-body user-stats__block-body--stadium-rank">
+      <h2 class="responsive_type">{{session.currentUser.current_rank}}<br><small>of</small><br> {{session.currentUser.current_game_participants}}</h2><!-- Dynamic -->
+    </div>
+  </div>
+
+</div>

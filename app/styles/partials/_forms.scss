@@ -1,0 +1,42 @@
+.login-form,
+.sign-up-form
+{
+  @include span-columns(4);
+  @include omega();
+  display: inline-block;
+
+  &__input {
+    position: relative;
+  } 
+
+  &__input-icon {
+      color: transparentize($winterhawk-red, 0.5) !important;
+      position: absolute;
+      left: em(5);
+      top: em(3);
+      font-size: $h1-font-size * 1.5;
+  }
+
+  input {
+    @include box-sizing(border-box);
+    height: em(40);
+    display: block;
+    padding-left: em(45);
+    margin-bottom: $base-spacing * .75;
+    font-size: $h3-font-size;
+    line-height: $h3-font-size;
+
+    &::-webkit-input-placeholder {
+      text-transform: uppercase;
+      font-size: $h4-font-size;
+      margin: 0 !important;
+    }
+  }
+}
+
+input {
+  font-size: $h2-font-size;
+  &::-webkit-input-placeholder {
+    text-transform: uppercase;
+  }
+}
