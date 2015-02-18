@@ -1,0 +1,48 @@
+2015-02-17 23:24:37.904 Winterhawks[3576:26252] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/mopineyro/Library/Developer/CoreSimulator/Devices/6603F471-9C32-4B46-B42E-4A0E3C95AD0C/data/Containers/Data/Application/8BB79405-8EEF-480D-A5D7-E8E159EFA558/Library/Cookies/Cookies.binarycookies
+2015-02-17 23:24:37.977 Winterhawks[3576:26252] Apache Cordova native platform version 3.7.0 is starting.
+2015-02-17 23:24:37.977 Winterhawks[3576:26252] Multi-tasking -> Device: YES, App: YES
+2015-02-17 23:24:37.979 Winterhawks[3576:26252] Unlimited access to network resources
+2015-02-17 23:24:37.981 Winterhawks[3576:26252] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-02-17 23:24:38.621 Winterhawks[3576:26252] Resetting plugins due to page load.
+2015-02-17 23:24:38.805 Winterhawks[3576:26252] Finished load of: file:///Users/mopineyro/Library/Developer/CoreSimulator/Devices/6603F471-9C32-4B46-B42E-4A0E3C95AD0C/data/Containers/Bundle/Application/304B5D79-4877-4B04-B4D7-690E21027167/Winterhawks.app/www/index.html
+2015-02-17 23:28:18.171 Winterhawks[3700:28378] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/mopineyro/Library/Developer/CoreSimulator/Devices/6603F471-9C32-4B46-B42E-4A0E3C95AD0C/data/Containers/Data/Application/61FD23CB-AE9E-4F2F-A05B-EA36FAD26508/Library/Cookies/Cookies.binarycookies
+2015-02-17 23:28:18.235 Winterhawks[3700:28378] Apache Cordova native platform version 3.7.0 is starting.
+2015-02-17 23:28:18.235 Winterhawks[3700:28378] Multi-tasking -> Device: YES, App: YES
+2015-02-17 23:28:18.236 Winterhawks[3700:28378] Unlimited access to network resources
+2015-02-17 23:28:18.237 Winterhawks[3700:28378] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-02-17 23:28:18.423 Winterhawks[3700:28378] Resetting plugins due to page load.
+2015-02-17 23:28:18.610 Winterhawks[3700:28378] Finished load of: file:///Users/mopineyro/Library/Developer/CoreSimulator/Devices/6603F471-9C32-4B46-B42E-4A0E3C95AD0C/data/Containers/Bundle/Application/B6A89AD3-4650-45D2-BBC2-4E4A37BB9AB2/Winterhawks.app/www/index.html
+2015-02-17 23:30:27.347 Winterhawks[3917:30308] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/mopineyro/Library/Developer/CoreSimulator/Devices/6603F471-9C32-4B46-B42E-4A0E3C95AD0C/data/Containers/Data/Application/2B888D4B-02C9-4801-969F-7590EB7FE741/Library/Cookies/Cookies.binarycookies
+2015-02-17 23:30:27.417 Winterhawks[3917:30308] Apache Cordova native platform version 3.7.0 is starting.
+2015-02-17 23:30:27.417 Winterhawks[3917:30308] Multi-tasking -> Device: YES, App: YES
+2015-02-17 23:30:27.418 Winterhawks[3917:30308] Unlimited access to network resources
+2015-02-17 23:30:27.419 Winterhawks[3917:30308] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-02-17 23:30:27.603 Winterhawks[3917:30308] Resetting plugins due to page load.
+2015-02-17 23:30:27.817 Winterhawks[3917:30308] Finished load of: file:///Users/mopineyro/Library/Developer/CoreSimulator/Devices/6603F471-9C32-4B46-B42E-4A0E3C95AD0C/data/Containers/Bundle/Application/FDC339FB-B07B-4B56-B4D2-63BD991EADEF/Winterhawks.app/www/index.html
+2015-02-17 23:30:27.828 Winterhawks[3917:30308] Resetting plugins due to page load.
+2015-02-17 23:30:27.943 Winterhawks[3917:30308] Finished load of: http://10.0.0.10:4200/
+2015-02-17 23:30:37.753 Winterhawks[3917:30308] Resetting plugins due to page load.
+2015-02-17 23:30:37.855 Winterhawks[3917:30308] Finished load of: http://10.0.0.10:4200/
+2015-02-18 00:41:30.702 Winterhawks[3917:30308] Resetting plugins due to page load.
+2015-02-18 00:41:30.877 Winterhawks[3917:30308] Finished load of: http://10.0.0.10:4200/
