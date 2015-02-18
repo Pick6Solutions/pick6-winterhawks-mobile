@@ -32,10 +32,10 @@ module.exports = function(environment) {
 
     cordova: {
       rebuildOnChange: false,
-      emulate: false,
+      emulate: true,
       emberUrl: 'http://' + addresses[0] + ':4200',
       liveReload: {
-        enabled: false,
+        enabled: true,
         platform: 'ios'
       }
     }
